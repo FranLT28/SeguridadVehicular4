@@ -1,11 +1,5 @@
 package com.example.usuario.seguridadvehicular;
 
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothSocket;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -19,11 +13,11 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
-import java.util.UUID;
-import java.util.jar.Manifest;
+
 
 public class emergencia extends AppCompatActivity {
     Button MenuR2, IdBCoordenada, IdCortaCorriente;
+    double Lat, Lon;
 
 
     @Override
@@ -32,6 +26,7 @@ public class emergencia extends AppCompatActivity {
         setContentView(R.layout.activity_emergencia);
         MenuR2= (Button) findViewById(R.id.MenuR2);
         IdCortaCorriente= (Button) findViewById(R.id.IdCortaCorriente);
+        IdBCoordenada= (Button) findViewById(R.id.IdBCoordenada);
 
         MenuR2.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -41,6 +36,9 @@ public class emergencia extends AppCompatActivity {
             }
 
         });
+
+
+
 
         if(ActivityCompat.checkSelfPermission
                 (emergencia.this, android.Manifest.permission.SEND_SMS)
@@ -70,16 +68,27 @@ public class emergencia extends AppCompatActivity {
             }
         }
 
-
     public void EnviarCoordenadas(View v){
+        Intent i = new Intent(emergencia.this, MapsActivity.class);
+        Bundle miBundle = new Bundle();
+        Bundle miBundle2 = new Bundle();
+        miBundle.putDouble("Dato1",Lat);
+        miBundle2.putDouble("Dato2",Lon);
+        i.putExtras(miBundle);
+        i.putExtras(miBundle2);
+        startActivity(i);
+        startActivity(i);
         try{
             SmsManager sms = SmsManager.getDefault();
-            sms.sendTextMessage("6391553336", null, "@GPS", null,null);
+            sms.sendTextMessage("Numero de hardware a controlar",
+                    null, "@GPS", null,null);
             Toast.makeText(getApplicationContext(), "Mensaje Enviado.", Toast.LENGTH_LONG).show();
+
         }
 
         catch (Exception e){
-            Toast.makeText(getApplicationContext(), "Mensaje no enviado, datos incorrectos." + e.getMessage().toString(), Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Mensaje no enviado, datos incorrectos."
+                    + e.getMessage().toString(), Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
     }

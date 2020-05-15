@@ -33,7 +33,8 @@ public class Menu extends AppCompatActivity {
                 }
 
                 catch (Exception e){
-                    Toast.makeText(getApplicationContext(), "Mensaje no enviado, datos incorrectos." + e.getMessage().toString(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Mensaje no enviado, datos incorrectos."
+                            + e.getMessage().toString(), Toast.LENGTH_LONG).show();
                     e.printStackTrace();
                 }
             }
@@ -57,7 +58,5 @@ public class Menu extends AppCompatActivity {
         });
 
     }
-
-
 
 }

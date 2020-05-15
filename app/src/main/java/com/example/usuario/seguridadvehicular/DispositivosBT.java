@@ -2,7 +2,6 @@ package com.example.usuario.seguridadvehicular;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
@@ -14,17 +13,13 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.Set;
 
 public class DispositivosBT extends AppCompatActivity {
-
     Button MenuR;
-
-
     //1)
     // Depuración de LOGCAT
-    private static final String TAG = "DispositivosBT"; //<-<- PARTE A MODIFICAR >->->
+    private static final String TAG = "DispositivosBT";
     // Declaracion de ListView
     ListView IdLista;
     // String que se enviara a la actividad principal, mainactivity
@@ -34,18 +29,12 @@ public class DispositivosBT extends AppCompatActivity {
     private BluetoothAdapter mBtAdapter;
     private ArrayAdapter mPairedDevicesArrayAdapter;
 
-   /* @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_interfaz);
-    }*/
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dispositivos_bt);
-
     }
 
     @Override
@@ -54,7 +43,6 @@ public class DispositivosBT extends AppCompatActivity {
         super.onResume();
         //---------------------------------
         VerificarEstadoBT();
-
 
         MenuR= (Button) findViewById(R.id.Main);
 

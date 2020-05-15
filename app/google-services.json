@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "793536185067",
+    "firebase_url": "https://seguridadvehicular-80c33.firebaseio.com",
+    "project_id": "seguridadvehicular-80c33",
+    "storage_bucket": "seguridadvehicular-80c33.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793536185067:android:a2f5c95a904dddeeb0b4ae",
+        "android_client_info": {
+          "package_name": "com.example.usuario.seguridadvehicular"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "793536185067-dnphibl7s37tjj17m0aultpj6qt2mf5r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.usuario.seguridadvehicular",
+            "certificate_hash": "ffb7473f89d604855dafc78bca62a725cd30ba82"
+          }
+        },
+        {
+          "client_id": "793536185067-p5vk1imc9cbjqvvolo2dkrglth5cvr4s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOsx0K1jagOAF6ISm2ipqXapoRGAu_Jhs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "793536185067-p5vk1imc9cbjqvvolo2dkrglth5cvr4s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

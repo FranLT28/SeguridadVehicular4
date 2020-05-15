@@ -15,14 +15,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.UUID;
 
 public class UserInterfaz extends AppCompatActivity {
-
     //1)
     Button IdEncender, IdApagar,IdDesconectar, IdMenu, IdCoordenada, IdRegister;
     TextView IdBufferIn,IdConectado;
@@ -73,7 +71,6 @@ public class UserInterfaz extends AppCompatActivity {
                    // IdBufferIn.setText("Dato: " + DataStringIN);//<-<- PARTE A MODIFICAR >->->
 
                     int endOfLineIndex = DataStringIN.indexOf("#");
-
                     if (endOfLineIndex > 0) {
                         if (r==1){
                             String dataInPrint = DataStringIN.substring(0, endOfLineIndex);
@@ -82,13 +79,10 @@ public class UserInterfaz extends AppCompatActivity {
                             String[] parts= coord.split(",");
                             String part1=parts[0];
                             String part2=parts[1];
-
                             et1.setText("Latitud: "+part1);
                             et2.setText("Longitud: "+part2);
-
                             Lat = Double.parseDouble(part1);
                             Lon = Double.parseDouble(part2);
-
                         }
                         if(r==0){
                             String dataInPrint = DataStringIN.substring(0, endOfLineIndex);
@@ -126,7 +120,6 @@ public class UserInterfaz extends AppCompatActivity {
             public void onClick(View v) {
                 MyConexionBT.write("Z");
                 r=1;
-
             }
         });
 
@@ -165,11 +158,25 @@ public class UserInterfaz extends AppCompatActivity {
         });
 
 
-        IdMenu.setOnClickListener(new View.OnClickListener(){
+        /*IdMenu.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(UserInterfaz.this, Menu.class);
                 //i.putExtra(EXTRA_DEVICE_ADDRESS, address);
+                startActivity(i);
+            }
+        });*/
+
+        IdMenu.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(UserInterfaz.this, MapsActivity.class);
+                Bundle miBundle = new Bundle();
+                Bundle miBundle2 = new Bundle();
+                miBundle.putDouble("Dato1",Lat);
+                miBundle2.putDouble("Dato2",Lon);
+                i.putExtras(miBundle);
+                i.putExtras(miBundle2);
                 startActivity(i);
             }
         });
