@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "793536185067-lrngvo5av89gar9hintbpq77510i1fig.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.usuario.seguridadvehicular",
+            "certificate_hash": "8a8ddce1493403c5da8d32a4e238f38ed0809458"
+          }
+        },
+        {
           "client_id": "793536185067-dnphibl7s37tjj17m0aultpj6qt2mf5r.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

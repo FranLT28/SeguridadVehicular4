@@ -8,11 +8,10 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.io.IOException;
@@ -170,14 +169,7 @@ public class UserInterfaz extends AppCompatActivity {
         IdMenu.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(UserInterfaz.this, MapsActivity.class);
-                Bundle miBundle = new Bundle();
-                Bundle miBundle2 = new Bundle();
-                miBundle.putDouble("Dato1",Lat);
-                miBundle2.putDouble("Dato2",Lon);
-                i.putExtras(miBundle);
-                i.putExtras(miBundle2);
-                startActivity(i);
+                Intent i = new Intent(UserInterfaz.this, Menu.class);
             }
         });
 

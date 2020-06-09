@@ -3,9 +3,8 @@ package com.example.usuario.seguridadvehicular;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.View;
@@ -70,6 +69,9 @@ public class emergencia extends AppCompatActivity {
 
     public void EnviarCoordenadas(View v){
         Intent i = new Intent(emergencia.this, MapsActivity.class);
+        startActivity(i);
+        /*
+        //Enviar dato de actividad a actividad, pero ya no se requiere este metodo.
         Bundle miBundle = new Bundle();
         Bundle miBundle2 = new Bundle();
         miBundle.putDouble("Dato1",Lat);
@@ -78,6 +80,7 @@ public class emergencia extends AppCompatActivity {
         i.putExtras(miBundle2);
         startActivity(i);
         startActivity(i);
+        //Enviar mensaje a hardware sim808 pero ya no se rquiere este paso.
         try{
             SmsManager sms = SmsManager.getDefault();
             sms.sendTextMessage("Numero de hardware a controlar",
@@ -90,7 +93,7 @@ public class emergencia extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Mensaje no enviado, datos incorrectos."
                     + e.getMessage().toString(), Toast.LENGTH_LONG).show();
             e.printStackTrace();
-        }
+        }*/
     }
 
 
